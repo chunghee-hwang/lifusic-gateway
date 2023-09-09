@@ -1,0 +1,26 @@
+server:
+  port: 5050
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "gateway"
+  endpoint:
+    gateway:
+      enabled: true
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: account-server
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/account/**
+        - id: core-server
+          uri: http://localhost:9090
+          predicates:
+            - Path=/api/admin/**
+            - Path=/api/music/**
