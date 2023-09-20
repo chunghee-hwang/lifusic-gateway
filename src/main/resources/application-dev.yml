@@ -22,7 +22,7 @@ spring:
         - id: core-server-socket
           uri: ws://cores-server:9090
           predicates:
-            - Path=/ws/core
+            - Path=/ws-endpoint
         - id: core-server
           uri: http://core-server:9090
           predicates:
