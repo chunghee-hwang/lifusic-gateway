@@ -26,7 +26,7 @@ spring:
         - id: core-server
           uri: http://localhost:9090
           predicates:
-            - Path=/api/admin/**,Path=/api/music/**
+            - Path=/api/admin/**,/api/music/**
         - id: file-server
           uri: http://localhost:6060
           predicates:
