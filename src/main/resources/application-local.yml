@@ -31,3 +31,10 @@ spring:
           uri: http://localhost:6060
           predicates:
             - Path=/api/file/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allow-credentials: false
+            allowedHeaders: "*"
+            allowedMethods: "*"
