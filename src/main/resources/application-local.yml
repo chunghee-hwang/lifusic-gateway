@@ -20,9 +20,9 @@ spring:
           predicates:
             - Path=/api/account/**
         - id: core-server-socket
-          uri: ws://localhost:9090
+          uri: http://localhost:9090
           predicates:
-            - Path=/ws-endpoint
+            - Path=/ws-endpoint/**
         - id: core-server
           uri: http://localhost:9090
           predicates:
@@ -31,10 +31,17 @@ spring:
           uri: http://localhost:6060
           predicates:
             - Path=/api/file/**
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
       globalcors:
-        corsConfigurations:
+        cors-configurations:
           '[/**]':
-            allowedOrigins: "*"
-            allow-credentials: false
+            allowedOrigins: "http://localhost:3000"
+            allow-credentials: true
             allowedHeaders: "*"
-            allowedMethods: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - OPTIONS
+              - PUT
+              - DELETE
