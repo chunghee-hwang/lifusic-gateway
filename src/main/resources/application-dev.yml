@@ -36,7 +36,7 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: "http://host.docker.internal:3000"
+            allowedOrigins: "http://frontend:3000"
             allow-credentials: true
             allowedHeaders: "*"
             allowedMethods:
