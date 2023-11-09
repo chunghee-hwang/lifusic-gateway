@@ -19,12 +19,12 @@ spring:
           uri: http://account-server:8080
           predicates:
             - Path=/api/account/**
-        - id: core-server-socket
-          uri: http://core-server:9090
+        - id: music-service-server-socket
+          uri: http://music-service-server:9090
           predicates:
             - Path=/ws-endpoint/**
-        - id: core-server
-          uri: http://core-server:9090
+        - id: music-service-server
+          uri: http://music-service-server:9090
           predicates:
             - Path=/api/admin/**,/api/music/**
         - id: file-server
